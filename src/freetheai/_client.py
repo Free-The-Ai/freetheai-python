@@ -89,7 +89,7 @@ class _Base:
             **(default_headers or {}),
         }
         self._model_ids: list[str] = []
-        self._model_ids_at = 0.0
+        self._model_ids_at: float | None = None
 
     def _chain(self, model: str, fallback_models: Sequence[str] | None) -> list[str]:
         chain = [model]
@@ -231,7 +231,7 @@ class FreeTheAI(_Base):
 
     def _suggest(self, error: ModelNotFoundError, model: str) -> str | None:
         try:
-            if time.monotonic() - self._model_ids_at > MODEL_CACHE_SECONDS:
+            if self._model_ids_at is None or time.monotonic() - self._model_ids_at > MODEL_CACHE_SECONDS:
                 self._model_ids = [m["id"] for m in self._once("GET", "/models").json()["data"]]
                 self._model_ids_at = time.monotonic()
         except (FreeTheAIError, KeyError, ValueError):
@@ -408,7 +408,7 @@ class AsyncFreeTheAI(_Base):
 
     async def _suggest(self, error: ModelNotFoundError, model: str) -> str | None:
         try:
-            if time.monotonic() - self._model_ids_at > MODEL_CACHE_SECONDS:
+            if self._model_ids_at is None or time.monotonic() - self._model_ids_at > MODEL_CACHE_SECONDS:
                 self._model_ids = [m["id"] for m in (await self._once("GET", "/models")).json()["data"]]
                 self._model_ids_at = time.monotonic()
         except (FreeTheAIError, KeyError, ValueError):
