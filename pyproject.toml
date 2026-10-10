@@ -13,7 +13,7 @@ requires-python = ">=3.9"
 authors = [{ name = "FreeTheAI", email = "vibheksoni@engineer.com" }]
 keywords = [
   "freetheai", "free ai api", "openai compatible", "llm", "ai sdk", "chat completions",
-  "streaming", "web search", "free llm api", "gpt", "claude", "gemini", "deepseek",
+  "streaming", "web search", "free llm api", "tool calls",
 ]
 classifiers = [
   "Development Status :: 4 - Beta",

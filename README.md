@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://free-the-ai.github.io/freetheai-python/"><img src=".github/banner.jpg" alt="FreeTheAI Python SDK" width="100%"></a>
+  <a href="https://free-the-ai.github.io/freetheai-python/"><img src="https://raw.githubusercontent.com/Free-The-Ai/freetheai-python/main/.github/banner.jpg" alt="FreeTheAI Python SDK" width="100%"></a>
 </p>
 
 <p align="center">
