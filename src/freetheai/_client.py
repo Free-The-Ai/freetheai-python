@@ -102,13 +102,16 @@ class _Base:
 class FreeTheAI(_Base):
     """Client for the FreeTheAI API.
 
-    >>> from freetheai import FreeTheAI
-    >>> client = FreeTheAI()  # reads FREETHEAI_API_KEY
-    >>> reply = client.chat.completions.create(
-    ...     model="fta/zai/glm-5.3",
-    ...     messages=[{"role": "user", "content": "Hello!"}],
-    ... )
-    >>> print(reply["choices"][0]["message"]["content"])
+    ```python
+    from freetheai import FreeTheAI
+
+    client = FreeTheAI()  # reads FREETHEAI_API_KEY
+    reply = client.chat.completions.create(
+        model="fta/zai/glm-5.3",
+        messages=[{"role": "user", "content": "Hello!"}],
+    )
+    print(reply["choices"][0]["message"]["content"])
+    ```
 
     ``fallback_models`` are tried in order when a model is busy, filtered,
     over its provider budget, or down. ``max_concurrency`` caps replies in
