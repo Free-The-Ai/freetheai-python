@@ -87,8 +87,9 @@ Read [Reliability](https://free-the-ai.github.io/freetheai-python/reliability/) 
 
 ## More from FreeTheAI
 
-- [JavaScript / TypeScript SDK](https://github.com/Free-The-Ai/freetheai-js) and [Go SDK](https://github.com/Free-The-Ai/freetheai-go)
-- [Cookbook](https://github.com/Free-The-Ai/freetheai-cookbook): runnable examples
+- [JavaScript / TypeScript SDK](https://github.com/Free-The-Ai/freetheai-js) ([docs](https://free-the-ai.github.io/freetheai-js/)) and [Go SDK](https://github.com/Free-The-Ai/freetheai-go) ([docs](https://free-the-ai.github.io/freetheai-go/))
+- [Free stock widgets](https://github.com/Free-The-Ai/free-stock-widgets) for live price cards and charts
+- [Cookbook](https://github.com/Free-The-Ai/freetheai-cookbook) ([docs](https://free-the-ai.github.io/freetheai-cookbook/)): runnable examples
 - [Setup guides](https://freetheai.org/setup) for SillyTavern, JanitorAI, Claude Code, Cline, and more
 - [API status](https://freetheai.org/status) and [Discord](https://discord.gg/secrets)
 
