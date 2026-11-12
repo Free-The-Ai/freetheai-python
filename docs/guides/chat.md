@@ -8,7 +8,7 @@ description: Chat completions with the FreeTheAI Python SDK - messages, streamin
 
 ```python
 reply = client.chat.completions.create(
-    model="fta/zai/glm-5.3",
+    model="glm-5.3",
     messages=[{"role": "user", "content": "Name three uses for a paperclip."}],
     temperature=0.7,
     max_tokens=400,
@@ -26,7 +26,7 @@ Any extra keyword argument is sent as is, so every Chat Completions parameter wo
 
 ```python
 for text in client.chat.completions.stream_text(
-    model="fta/kimi/k3",
+    model="kimi-k3",
     messages=[{"role": "user", "content": "Tell me a short story."}],
 ):
     print(text, end="", flush=True)
@@ -37,7 +37,7 @@ for text in client.chat.completions.stream_text(
 `stream=True` returns an iterator of `chat.completion.chunk` dictionaries. The last chunk carries `usage`.
 
 ```python
-for chunk in client.chat.completions.create(model="fta/kimi/k3", messages=messages, stream=True):
+for chunk in client.chat.completions.create(model="kimi-k3", messages=messages, stream=True):
     for choice in chunk["choices"]:
         print(choice["delta"].get("content") or "", end="")
     if chunk.get("usage"):
@@ -51,7 +51,7 @@ If the stream stops before the model finishes, the iterator raises [`StreamInter
 Thinking models return their reasoning in `message["reasoning_content"]` (and `delta["reasoning_content"]` when streaming). Turn thinking off with `reasoning_effort="none"`:
 
 ```python
-reply = client.chat.completions.create(model="fta/zai/glm-5.3", messages=messages, reasoning_effort="none")
+reply = client.chat.completions.create(model="glm-5.3", messages=messages, reasoning_effort="none")
 ```
 
 Some models write their thinking at the start of the reply inside `<think>...</think>`; the client moves it to `reasoning_content` so `content` holds only the answer.
@@ -62,7 +62,7 @@ Models that read images take OpenAI-style content parts:
 
 ```python
 reply = client.chat.completions.create(
-    model="fta/zai/glm-5.3-flash",
+    model="glm-5.3-flash",
     messages=[{
         "role": "user",
         "content": [

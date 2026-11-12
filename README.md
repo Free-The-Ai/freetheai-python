@@ -19,7 +19,7 @@
 
 # FreeTheAI Python SDK
 
-The official Python client for [FreeTheAI](https://freetheai.org), a free OpenAI-compatible AI API. One key gives you dozens of chat models, streaming, tool calls, web search with sourced answers, and image and video tasks.
+The official Python client for [FreeTheAI](https://freetheai.org), an AI model marketplace with one OpenAI-compatible API. One key reaches models from many providers, paid per token, with streaming, tool calls, web search with sourced answers, and image and video tasks.
 
 ```bash
 pip install freetheai
@@ -27,7 +27,7 @@ pip install freetheai
 
 ## Quickstart
 
-Create a key at [freetheai.org](https://freetheai.org/dashboard/api-keys), do the [daily check-in](https://freetheai.org/checkin) for free models, and set `FREETHEAI_API_KEY`.
+Create a key at [freetheai.org](https://freetheai.org/dashboard/api-keys), add funds and follow a provider at [freetheai.org/providers](https://freetheai.org/providers), and set `FREETHEAI_API_KEY`.
 
 ```python
 from freetheai import FreeTheAI
@@ -35,7 +35,7 @@ from freetheai import FreeTheAI
 client = FreeTheAI()
 
 reply = client.chat.completions.create(
-    model="fta/zai/glm-5.3",
+    model="glm-5.3",
     messages=[{"role": "user", "content": "Write a haiku about open models."}],
 )
 print(reply["choices"][0]["message"]["content"])
@@ -44,7 +44,7 @@ print(reply["choices"][0]["message"]["content"])
 Stream it:
 
 ```python
-for text in client.chat.completions.stream_text(model="fta/kimi/k3", messages=messages):
+for text in client.chat.completions.stream_text(model="kimi-k3", messages=messages):
     print(text, end="", flush=True)
 ```
 
@@ -67,7 +67,7 @@ Generic OpenAI clients treat every error the same. This one knows how the FreeTh
 - **Mistyped model IDs** come back with suggestions; a missing `fta/` prefix is fixed for you.
 
 ```python
-client = FreeTheAI(fallback_models=["fta/zai/glm-5.3-flash", "fta/mmx/minimax-m3"])
+client = FreeTheAI(fallback_models=["glm-5.3-flash", "minimax-m3"])
 ```
 
 Read [Reliability](https://free-the-ai.github.io/freetheai-python/reliability/) for the full list.
@@ -76,7 +76,7 @@ Read [Reliability](https://free-the-ai.github.io/freetheai-python/reliability/) 
 
 | Guide | |
 | --- | --- |
-| [Getting started](https://free-the-ai.github.io/freetheai-python/getting-started/) | Key, check-in, first request |
+| [Getting started](https://free-the-ai.github.io/freetheai-python/getting-started/) | Key, funds, first request |
 | [Chat and streaming](https://free-the-ai.github.io/freetheai-python/guides/chat/) | Parameters, streaming, reasoning, images |
 | [Tool calls](https://free-the-ai.github.io/freetheai-python/guides/tools/) | Function calling step by step |
 | [Web search](https://free-the-ai.github.io/freetheai-python/guides/web-search/) | Results and sourced answers |

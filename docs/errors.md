@@ -10,7 +10,7 @@ All errors inherit from `FreeTheAIError`. API errors (`APIStatusError` and its s
 from freetheai import CheckinRequiredError, DailyLimitError, FreeTheAIError
 
 try:
-    reply = client.chat.completions.create(model="fta/zai/glm-5.3", messages=messages)
+    reply = client.chat.completions.create(model="glm-5.3", messages=messages)
 except CheckinRequiredError as error:
     print("Do the daily check-in:", error.checkin_url)
 except DailyLimitError as error:

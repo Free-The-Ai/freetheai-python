@@ -31,7 +31,7 @@ Models with built-in search take `web_search_options={}`; their sources come bac
 
 ```python
 reply = client.chat.completions.create(
-    model="fta/dog/gpt-5.4-mini",
+    model="gpt-5.4-mini",
     messages=[{"role": "user", "content": "What is the weather in Tokyo today?"}],
     web_search_options={},
 )

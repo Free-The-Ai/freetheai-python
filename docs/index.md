@@ -1,12 +1,12 @@
 ---
-description: Official Python SDK for FreeTheAI, the free OpenAI-compatible AI API, with built-in retries, fallback models, and rate-limit handling.
+description: Official Python SDK for FreeTheAI, the AI model marketplace with one OpenAI-compatible API, with built-in retries, fallback models, and rate-limit handling.
 ---
 
 # FreeTheAI Python SDK
 
 ![FreeTheAI Python SDK](assets/banner.jpg)
 
-`freetheai` is the official Python client for [FreeTheAI](https://freetheai.org), a free OpenAI-compatible AI API. One key gives you dozens of chat models, streaming, tool calls, web search with sourced answers, and image and video tasks.
+`freetheai` is the official Python client for [FreeTheAI](https://freetheai.org), an AI model marketplace with one OpenAI-compatible API. One key reaches models from many providers, paid per token, with streaming, tool calls, web search with sourced answers, and image and video tasks.
 
 ```bash
 pip install freetheai
@@ -18,7 +18,7 @@ from freetheai import FreeTheAI
 client = FreeTheAI()  # reads FREETHEAI_API_KEY
 
 reply = client.chat.completions.create(
-    model="fta/zai/glm-5.3",
+    model="glm-5.3",
     messages=[{"role": "user", "content": "Write a haiku about open models."}],
 )
 print(reply["choices"][0]["message"]["content"])
@@ -39,7 +39,7 @@ The full list is on [Reliability](reliability.md).
 
 ## Where to next
 
-- [Getting started](getting-started.md): key, check-in, first request
+- [Getting started](getting-started.md): key, funds, first request
 - [Chat and streaming](guides/chat.md): messages, streaming, reasoning, parameters
 - [Tool calls](guides/tools.md): function calling, step by step
 - [Web search](guides/web-search.md): search results and sourced answers

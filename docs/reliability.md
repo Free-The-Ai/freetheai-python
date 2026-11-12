@@ -29,8 +29,8 @@ Errors that retrying cannot fix (a wrong key, the daily check-in, the daily limi
 ## Fallback models
 
 ```python
-client = FreeTheAI(fallback_models=["fta/zai/glm-5.3-flash", "fta/mmx/minimax-m3"])
-reply = client.chat.completions.create(model="fta/kimi/k3", messages=messages)
+client = FreeTheAI(fallback_models=["glm-5.3-flash", "minimax-m3"])
+reply = client.chat.completions.create(model="kimi-k3", messages=messages)
 print(reply["model"])  # the model that answered
 ```
 
@@ -40,7 +40,7 @@ For streams, fallbacks only happen before the first piece of the reply arrives, 
 
 ## Concurrency
 
-Accounts run a limited number of replies at once (one or two on the free tier). The client starts with no limit. The first time the API refuses a call for concurrency, the client lowers its own limit to the number of replies that were running and queues further calls until a slot frees up. Ten minutes after the last refusal it tries more again, so a plan upgrade is picked up without a restart.
+Accounts run a limited number of replies at once (three at a time for paid requests). The client starts with no limit. The first time the API refuses a call for concurrency, the client lowers its own limit to the number of replies that were running and queues further calls until a slot frees up. Ten minutes after the last refusal it tries more again, so a plan upgrade is picked up without a restart.
 
 To set a fixed cap instead: `FreeTheAI(max_concurrency=2)`.
 

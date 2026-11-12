@@ -107,7 +107,7 @@ class FreeTheAI(_Base):
 
     client = FreeTheAI()  # reads FREETHEAI_API_KEY
     reply = client.chat.completions.create(
-        model="fta/zai/glm-5.3",
+        model="glm-5.3",
         messages=[{"role": "user", "content": "Hello!"}],
     )
     print(reply["choices"][0]["message"]["content"])

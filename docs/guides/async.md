@@ -13,13 +13,13 @@ from freetheai import AsyncFreeTheAI
 async def main():
     async with AsyncFreeTheAI() as client:
         reply = await client.chat.completions.create(
-            model="fta/zai/glm-5.3",
+            model="glm-5.3",
             messages=[{"role": "user", "content": "Hello!"}],
         )
         print(reply["choices"][0]["message"]["content"])
 
         async for text in client.chat.completions.stream_text(
-            model="fta/zai/glm-5.3",
+            model="glm-5.3",
             messages=[{"role": "user", "content": "Count to five."}],
         ):
             print(text, end="")
@@ -34,7 +34,7 @@ Fire as many as you like with `asyncio.gather`. The client learns how many repli
 ```python
 questions = ["What is DNS?", "What is TLS?", "What is HTTP/3?"]
 replies = await asyncio.gather(*(
-    client.chat.completions.create(model="fta/zai/glm-5.3-flash", messages=[{"role": "user", "content": q}])
+    client.chat.completions.create(model="glm-5.3-flash", messages=[{"role": "user", "content": q}])
     for q in questions
 ))
 ```

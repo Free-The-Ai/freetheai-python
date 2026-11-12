@@ -23,7 +23,7 @@ tools = [{
 }]
 
 messages = [{"role": "user", "content": "Is it raining in Paris?"}]
-reply = client.chat.completions.create(model="fta/zai/glm-5.3", messages=messages, tools=tools)
+reply = client.chat.completions.create(model="glm-5.3", messages=messages, tools=tools)
 message = reply["choices"][0]["message"]
 messages.append(message)
 
@@ -32,7 +32,7 @@ for call in message.get("tool_calls", []):
     result = {"city": args["city"], "raining": False}  # call your real function here
     messages.append({"role": "tool", "tool_call_id": call["id"], "content": json.dumps(result)})
 
-final = client.chat.completions.create(model="fta/zai/glm-5.3", messages=messages, tools=tools)
+final = client.chat.completions.create(model="glm-5.3", messages=messages, tools=tools)
 print(final["choices"][0]["message"]["content"])
 ```
 

@@ -5,14 +5,14 @@ build-backend = "hatchling.build"
 [project]
 name = "freetheai"
 dynamic = ["version"]
-description = "Official Python SDK for FreeTheAI: a free OpenAI-compatible AI API with chat, streaming, web search, and image and video tasks."
+description = "Official Python SDK for FreeTheAI, the AI model marketplace with one OpenAI-compatible API: chat, streaming, web search, and image and video tasks."
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
 requires-python = ">=3.9"
 authors = [{ name = "FreeTheAI", email = "vibheksoni@engineer.com" }]
 keywords = [
-  "freetheai", "free ai api", "openai compatible", "llm", "ai sdk", "chat completions",
+  "freetheai", "ai model marketplace", "openai compatible", "llm", "ai sdk", "chat completions",
   "streaming", "web search", "free llm api", "tool calls",
 ]
 classifiers = [
