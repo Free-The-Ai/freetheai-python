@@ -25,7 +25,10 @@ classifiers = [
   "Topic :: Software Development :: Libraries :: Python Modules",
   "Typing :: Typed",
 ]
-dependencies = ["httpx>=0.25,<1"]
+dependencies = ["httpx>=0.25,<1", "orjson>=3.9"]
+
+[project.scripts]
+freetheai = "freetheai._cli:main"
 
 [project.urls]
 Homepage = "https://freetheai.org"

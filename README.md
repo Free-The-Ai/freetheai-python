@@ -55,6 +55,18 @@ answer = client.answer("What changed in Python 3.14?")
 print(answer["answer"], answer["sources"])
 ```
 
+## Set up a coding tool
+
+```sh
+pip install freetheai
+freetheai init                  # pick Claude Code or Codex CLI
+freetheai init claude-code --model kimi-k3
+freetheai init codex --remove
+freetheai whoami                # the key's balance and spend
+```
+
+`init` asks for your key (or reads `FTAI_KEY`), checks it with the API, backs up the tool's settings file, and changes only FreeTheAI's own entries. Make a key at [freetheai.org/dashboard/api-keys](https://freetheai.org/dashboard/api-keys).
+
 ## Built for the FreeTheAI API
 
 Generic OpenAI clients treat every error the same. This one knows how the FreeTheAI API answers:
